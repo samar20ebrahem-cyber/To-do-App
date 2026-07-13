@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/setting.css">
+    <title>To Do List App Setting</title>
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+        <span class="close">✕</span>
+    </header>
+
+    <main>
+        <form>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" value="">
+
+            <!-- Dark Mode -->
+            <div class="setting-group">
+                <div class="dark-mode">
+                    <div>
+                        <h2 style="margin: 0;">Dark Mode</h2>
+                        <p style="margin: 4px 0 0; color: #666; font-size: 0.95rem;">Soft on the eyes at night</p>
+                    </div>
+                    <input type="checkbox" style="width: 50px; height: 28px; accent-color: #c48b9f;">
+                </div>
+            </div>
+
+            <!-- Theme -->
+            <div class="setting-group">
+                <h2>Theme</h2>
+                <div class="theme-op">
+                    <div class="option active">Light</div>
+                    <div class="option">Dark</div>
+                    <div class="option">Girly</div>
+                </div>
+            </div>
+
+            <!-- Animation Speed -->
+            <div class="setting-group animation">
+                <h2>Animation Speed</h2>
+                <input type="range" min="0" max="100" value="50">
+            </div>
+
+            <!-- Font Size -->
+            <div class="setting-group animation">
+                <h2>Font Size</h2>
+                <input type="range" min="12" max="24" value="16">
+            </div>
+
+            <!-- Language -->
+            <div class="setting-group">
+                <h2>Language</h2>
+                <div class="lang">
+                    <div class="card active">English</div>
+                    <div class="card">العربية</div>
+                </div>
+            </div>
+
+            <button type="submit">Save Changes</button>
+        </form>
+    </main>
+</body>
+</html>

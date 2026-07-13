@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/task.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List App New Task</title>
+</head>
+<body>
+   <header>
+        <h1>Create a new task</h1>
+        <span class="close">✕</span>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <label for="title">Task Title</label>
+            <input type="text" id="title" placeholder="What's on your mind?" required>
+
+            <label for="desc">Description</label>
+            <input type="text" id="desc" placeholder="Add details..." required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Time</label>
+            <input type="time" id="time" required>
+
+            <label>Priority</label>
+            <div class="priority-group">
+                <button type="button" class="priority-btn low" data-priority="low">Low</button>
+                <button type="button" class="priority-btn medium active" data-priority="medium">Medium</button>
+                <button type="button" class="priority-btn high" data-priority="high">High</button>
+            </div>
+
+            <label>Task Color</label>
+            <div class="color-picker">
+                <div class="color-option" style="background: #e57373;" data-color="#e57373"></div>
+                <div class="color-option active" style="background: #c48b9f;" data-color="#c48b9f"></div>
+                <div class="color-option" style="background: #81c784;" data-color="#81c784"></div>
+                <div class="color-option" style="background: #64b5f6;" data-color="#64b5f6"></div>
+                <div class="color-option" style="background: #ba68c8;" data-color="#ba68c8"></div>
+                <div class="color-option" style="background: #ffd54f;" data-color="#ffd54f"></div>
+            </div>
+
+            <label for="category">Category</label>
+            <select id="category" required>
+                <option value="study">📚 Study</option>
+                <option value="university">🏫 University</option>
+                <option value="programming">💻 Programming</option>
+                <option value="shopping">🛒 Shopping</option>
+                <option value="personal">👤 Personal</option>
+                <option value="work">💼 Work</option>
+            </select>
+
+            <label for="notes">Notes</label>
+            <input type="text" id="notes" placeholder="Anything to remember?">
+
+            <label for="attach">Attachment</label>
+            <input type="text" id="attach" placeholder="🔗 Attach a file (optional)">
+
+            <div class="form-actions">
+                <button type="button" class="btn-cancel">Cancel</button>
+                <button type="submit" class="btn-create">Create Task</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
