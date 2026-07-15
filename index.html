@@ -13,14 +13,14 @@
 <body>
     <header>
         <div class="text-title">
-             <p><!-- التاريخ هنعمله بجافا اسكربت --> frayday 10 mi</p>
-            <h1>Good <!-- (evening, morning)+name --> morning samar👋 </h1>
+             <p  id="today-date"><!-- التاريخ هنعمله بجافا اسكربت --></p>
+            <h1 id="welcome"> samar👋 </h1>
         </div>
          <div class="icons-header">
             <i class="fa-solid fa-moon"></i> 
-            <i class="fa-regular fa-bell"></i> 
-            <i class="fa-solid fa-gear"></i>
-            <div class="user-avatar">S</div> 
+            <a href="/pages/notifications.html" ><i class="fa-regular fa-bell"></i> </a>
+            <a href="/pages/setting.html"><i class="fa-solid fa-gear"></i></a> 
+          <div class="user-avatar">S</div> 
          </div>
     </header> 
     <main>
@@ -72,7 +72,7 @@
         <section>
             <div class="tasks">
                  <h2>Your Tasks</h2>
-                 <button> + Add New Task</button>
+                 <button><a href="/pages/new-task.html"> <i class="fa-solid fa-plus"></i> Add New Task </a></button>
             </div>
             <div class="filters">
                 <button class="filter-btn active">All</button>
@@ -81,11 +81,12 @@
                 <button class="filter-btn">This week</button>
                 <button class="filter-btn">Pending</button>
                 <button class="filter-btn">Completed</button>
-                <button><i>+</i> more filter</button>
+                <button>  <i class="fa-solid fa-plus"></i> more filter</button>
             </div>    
         </section>
     </main>
 </body>
+<script src="/js/main.js"></script>
 </html>
 
 

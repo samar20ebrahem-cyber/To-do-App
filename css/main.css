@@ -1,125 +1,281 @@
 :root{
-   --primary: #534747;
-    --accent: #f40505;
-    --light: aliceblue;
-    --text: #202020d2;
+    --bg: #fff8fc;
+    --surface: #ffffff;
+    --text: #5b4b5f;
+    --text-light: #9b8fa3;
+    --border: #f2dce7;
+    --shadow: 0 10px 25px rgba(233, 151, 184, 0.15);
+    --pink: #ffd6e7;
+    --purple: #e7d7ff;
+    --blue: #d8eeff;
+    --mint: #d8f7e8;
+    --btn: #f48fb1;
+    --btn-hover: #ec6d98;
 }
 
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
 }
 
 body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:linear-gradient(135deg, #f4e3e3, #ffe4e8);
-    width: 100%;
-    min-height: 100vh;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+    background:linear-gradient(135deg,#fff8fc,#ffeef6);
+    width:100%;
+    min-height:100vh;
+    color:var(--text);
 }
 
-header, .search-bar, .tasks-n {
-    width: 95%;
-    max-width: 1200px;
-    margin: 10px auto;
-    background-color: var(--light);
-    border-radius: 20px;
+header,
+.search-bar,
+.tasks-n{
+    width:95%;
+    max-width:1200px;
+    margin:15px auto;
+    background:var(--surface);
+    border-radius:22px;
+    box-shadow:var(--shadow);
 }
-/* #####################3 HEADER ####################### */
+
 header{
-   padding: 10px;
-   display: flex;
-   justify-content: space-between;
+    padding:18px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
+
+.text-title p{
+    color:var(--text-light);
+    margin-bottom:6px;
+}
+
+.text-title h1{
+    color:var(--text);
+    font-size:2rem;
+}
+
 .icons-header{
-    display: flex;
+    display:flex;
+    gap:12px;
 }
+
 .icons-header i,
-.user-avatar {
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #f8d7da;
-    color: var(--text);
-    border: 2px solid #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.user-avatar{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#fff3f8;
+    color:#f48fb1;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(244,143,177,.15);
+}
+
+.icons-header i:hover,
+.user-avatar:hover{
+    background:#f48fb1;
+    color:#fff;
+}
+ a{
+    text-decoration: none;
 }
 
 main{
-   width: 100%;
+    width:100%;
 }
 
 .search-bar{
-   width: 95%;
-   padding: 15px;
-   margin-inline: auto;
-   margin-block: 10px;
-   background-color: aliceblue;
-   display: flex;
-  border-radius: 20px;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
 }
+
 .search-bar i{
-    color:rgba(70, 70, 70, 0.443);
-    margin-right: 10px;
+    color:var(--text-light);
+    margin-right:12px;
 }
+
 .search-bar input{
-    outline: none;
-    width: 96%;
-    border: none;
-    background-color: aliceblue;
+    width:100%;
+    border:none;
+    outline:none;
+    background:none;
+    color:var(--text);
+    font-size:16px;
 }
-/* ####################### CARDS ################## */
+
+.search-bar input::placeholder{
+    color:var(--text-light);
+}
+
 .tasks-n{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    width: 95%;
-    padding: 20px;
-    margin: 20px auto;
-    /* background-color: aliceblue; */
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:space-between;
+    padding:22px;
 }
+
 .card-vs{
-    flex: 1;
-    min-width: 240px;        
-    max-width: 280px;
-    height: 160px;
-    background-color: #534747;
-    border-radius: 15px;
-    padding: 20px;
-    position: relative;
-    transition: transform 0.2s;
+    flex:1;
+    min-width:240px;
+    max-width:280px;
+    min-height:190px;
+    border-radius:18px;
+    padding:20px;
+    position:relative;
+    transition:.3s;
+    cursor:pointer;
 }
-.card-vs:hover {
-    transform: translateY(-5px);
+
+.card-vs:hover{
+    transform:translateY(-6px);
 }
+
+.card-vs:nth-child(1){
+    background:#ffdbe9;
+    color:#bb5d87;
+}
+
+.card-vs:nth-child(2){
+    background:#d9f7e7;
+    color:#4f9c73;
+}
+
+.card-vs:nth-child(3){
+    background:#e7d7ff;
+    color:#7759c7;
+}
+
+.card-vs:nth-child(4){
+    background:#dcefff;
+    color:#4b88b6;
+}
+
+.card-vs i,
+.card-vs p,
+.card-vs h3{
+    color:inherit;
+}
+
+.card-vs h3{
+    font-size:38px;
+    margin:18px 0 8px;
+}
+
+.card-vs p{
+    font-size:15px;
+}
+
+.card-vs input[type="range"]{
+    width:100%;
+    margin:15px 0;
+    accent-color:currentColor;
+}
+
 .arrow{
-   position: absolute;
-   right: 10px;
-   top: 10px;
+    position:absolute;
+    top:18px;
+    right:18px;
+    font-size:17px;
 }
 
-/* ############33 TASKS SECTION */
 .tasks{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-}
-.tasks button{
-    padding: 10px;
-    border-radius: 15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:30px 35px 20px;
 }
 
-.filters{
-    margin: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.tasks h2{
+    color:var(--text);
+    font-size:28px;
 }
+
+.tasks button{
+    padding:12px 22px;
+    border:none;
+    border-radius:14px;
+    background:var(--btn);
+    color:#fff;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+}
+
+.tasks button:hover{
+    background:var(--btn-hover);
+}
+.tasks button a{
+  color:#fff;
+}
+.filters{
+    margin:0 35px 30px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
 .filters button{
-    padding: 10px;
-    border-radius: 15px;
+    padding:10px 18px;
+    border-radius:25px;
+    border:2px solid #f4dce6;
+    background:#fff;
+    color:var(--text);
+    cursor:pointer;
+    transition:.3s;
+    font-size:14px;
+}
+
+.filters button:hover,
+.filters .active{
+    background:#f48fb1;
+    border-color:#f48fb1;
+    color:#fff;
+}
+
+@media(max-width:768px){
+
+    .tasks{
+        flex-direction:column;
+        gap:18px;
+        align-items:flex-start;
+    }
+
+    .text-title h1{
+        font-size:1.6rem;
+    }
+
+}
+
+@media(max-width:480px){
+
+    header{
+        padding:15px;
+    }
+
+    .icons-header{
+        gap:8px;
+    }
+
+    .icons-header i,
+    .user-avatar{
+        width:40px;
+        height:40px;
+    }
+
+    .tasks,
+    .filters{
+        margin-inline:18px;
+    }
+
+    .tasks h2{
+        font-size:24px;
+    }
+
 }
