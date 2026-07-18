@@ -35,37 +35,37 @@
                 <div class="card-vs">
                     <i class="fa-solid fa-sun"></i>
                     <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
-                    <h3>0</h3>  <!-- عدد التاسكات اللي من النوع دا  -->
-                    <p>mmm</p> <!--// نوعه -->
-                    <input type="range">
-                    <p>mmm</p>  
+                    <h3 id="totalTasks">0</h3>
+                    <p>Today's Tasks</p> 
+                    <input type="range" id="todayRange" min="0" max="100" value="0">
+                    <p id="finesh">0%</p> 
                 </div>
                 <!--CARD 2-->
                 <div class="card-vs">
                     <i class="fa-regular fa-circle-check"></i>
                     <i class="fa-solid fa-arrow-up-right-from-square arrow"></i> 
-                    <h3>0</h3>  <!-- عدد التاسكات اللي من النوع دا  -->
-                    <p>mmm</p> <!--// نوعه -->
-                    <input type="range">
-                    <p>mmm</p>  
+                    <h3 id="completedTasks">0</h3>  
+                    <p>Completed</p>
+                    <input type="range" id="completedRange">
+                    <p id="comp">0%</p>  
                 </div>
                 <!-- CARD 3 -->
                 <div class="card-vs">
                     <i class="fa-solid fa-list-check"></i>
                     <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
-                    <h3>0</h3>  <!-- عدد التاسكات اللي من النوع دا  -->
-                    <p>,,mmm</p> <!--// نوعه -->
-                    <input type="range">
-                    <p>mmm</p>  
+                    <h3 id="allTasks">0</h3>  
+                    <p>All Tasks</p> 
+                    <input type="range" max="100" id="all">
+                    <p id="all-taskat">0%</p>  
                 </div>
                 <!-- CARD 4 -->
                 <div class="card-vs">
                    <i class="fa-solid fa-triangle-exclamation"></i>
                     <i class="fa-solid fa-arrow-up-right-from-square arrow"></i> 
-                     <h3>0</h3> <!-- عدد التاسكات اللي من النوع دا  -->
-                    <p>mmm</p> <!--// نوعه -->
-                    <input type="range">
-                    <p>mmm</p>  
+                     <h3 id="overdueTasks">0</h3> <!-- عدد التاسكات اللي فات معدها -->
+                    <p>Overdue</p><!--// نوعه -->
+                    <input type="range" id="overdueRange">
+                    <p id="overduePercent">0%</p>  
                 </div>
             </div>
         </section>

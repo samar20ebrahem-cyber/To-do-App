@@ -268,6 +268,30 @@ main{
     box-shadow:0 14px 30px rgba(0,0,0,.12);
 }
 
+.complete-btn{
+    position:absolute;
+    top:15px;
+    right:65px;
+    width:40px;
+    height:40px;
+    border:none;
+    border-radius:50%;
+    background:#e9f8ee;
+    color:#38b66a;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.complete-btn:hover{
+    background:#38b66a;
+    color:#fff;
+}
+
+.complete-btn.done{
+    background:#38b66a;
+    color:#fff;
+}
+
 .delete-btn{
     position: absolute;
     top: 15px;

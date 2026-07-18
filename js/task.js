@@ -40,7 +40,8 @@ form.addEventListener("submit",function(e){
         time:taskTime.value,
         category:category.value,
         priority:priority,
-        color:color
+        color:color,
+        completed: false,
     };
     tasks.push(task);
     localStorage.setItem("tasks",JSON.stringify(tasks));
