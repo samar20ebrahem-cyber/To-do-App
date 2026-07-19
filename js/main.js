@@ -181,20 +181,24 @@ overdueRange.value = overdueValue
 
 //FILTER EVENTS 
 allBtn.addEventListener("click", function () {
-    displayTasks(tasks)
-})
+    setActive(this);
+    displayTasks(tasks);
+});
 
 todayBtn.addEventListener("click", function () {
-    displayTasks(todayTasks)
-})
+    setActive(this);
+    displayTasks(todayTasks);
+});
 
 completedBtn.addEventListener("click", function () {
-    displayTasks(completedTasks)
-})
+    setActive(this);
+    displayTasks(completedTasks);
+});
 
 overdueBtn.addEventListener("click", function () {
-    displayTasks(overdueTasksList)
-})
+    setActive(this);
+    displayTasks(overdueTasksList);
+});
 displayTasks(tasks);
 
 
@@ -207,19 +211,3 @@ function setActive(button){
     });
     button.classList.add("active");
 }
-allBtn.addEventListener("click",function(){
-    setActive(this);
-    displayTasks(tasks);
-});
-todayBtn.addEventListener("click",function(){
-    setActive(this);
-    displayTasks(tasks);
-});
-completedBtn.addEventListener("click",function(){
-    setActive(this);
-    displayTasks(tasks);
-});
-overdueBtn.addEventListener("click",function(){
-    setActive(this);
-    displayTasks(tasks);
-});
