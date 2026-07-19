@@ -320,6 +320,22 @@ main{
     transform: scale(.95);
 }
 
+.task-info{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+}
+.priority,
+.category,
+.date,
+.time{
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:14px;
+}
+
 @media(max-width:768px){
 
     .tasks{

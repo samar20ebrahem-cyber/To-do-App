@@ -34,6 +34,7 @@ colorOptions.forEach(option=>{
 form.addEventListener("submit",function(e){
     e.preventDefault();
     let task={
+        id: Date.now(),
         title:title.value,
         description:description.value,
         date:taskDate.value,
