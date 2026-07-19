@@ -46,5 +46,5 @@ form.addEventListener("submit",function(e){
     };
     tasks.push(task);
     localStorage.setItem("tasks",JSON.stringify(tasks));
-    window.location.href="../index.html";
+    window.location.href="index.html";
 });

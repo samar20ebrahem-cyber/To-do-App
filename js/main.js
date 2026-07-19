@@ -14,7 +14,7 @@ date.textContent =`${days[day]} ${dateNumber} ${months[month]} `
 let greeting = "";
 if(hour>=5 && hour<12){
   greeting ='Good Morning';
-}else if(hour>=12 && hour<17){
+}else if(hour>=12 && hour<17){ 
      greeting ='Good Afternoon';
 }else if(hour>=17 && hour<20){
      greeting ='Good Evening';
@@ -22,13 +22,24 @@ if(hour>=5 && hour<12){
     greeting ='Good Night';
 }
 const welcome = document.getElementById('welcome')
-welcome.textContent = greeting
+const avatar = document.getElementById('avatar')
+let userName = localStorage.getItem("userName");
+if(userName){
+    welcome.textContent = `${greeting}, ${userName} 👋`;
+}else{
+    welcome.textContent = greeting;
+}
 
 const tasksList = document.querySelector(".tasks-list")
 let tasks = [];
 let savedTasks = localStorage.getItem("tasks")
 if (savedTasks) {
     tasks = JSON.parse(savedTasks)
+}
+
+// AVATAR 
+if(userName){
+    avatar.textContent = userName.charAt(0).toUpperCase()
 }
 
 // ===================== FILTERS =====================
@@ -211,3 +222,13 @@ function setActive(button){
     });
     button.classList.add("active");
 }
+// SEARCH
+const search = document.getElementById("search");
+search.addEventListener('input', function(){
+    let value = this.value.toLowerCase()
+    let searchTasks = tasks.filter(task=>{
+        return task.title.toLowerCase().includes(value);
+        
+    })
+    displayTasks(searchTasks)
+})

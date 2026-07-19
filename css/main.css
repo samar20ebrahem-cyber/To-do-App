@@ -217,6 +217,9 @@ main{
 .tasks button a{
   color:#fff;
 }
+input[type="range"]{
+    pointer-events: none;
+}
 .filters{
     margin:0 35px 30px;
     display:flex;
