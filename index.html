@@ -7,10 +7,14 @@
     <meta property="og:description" content="تطبيق إدارة المهام اليومية">
     <meta property="og:image" content="https://yoursite.com/todo-preview.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://unpkg.com/i18next@25.3.2/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@3.0.2/i18nextHttpBackend.min.js"></script>
+    <script src="js/language.js"></script>
     <link rel="stylesheet" href="css/main.css">
+     <link rel="stylesheet" href="css/theme.css">
     <title>To Do List App</title>
 </head>
-<body>
+<body class="dark">
     <header>
         <div class="text-title">
              <p  id="today-date"><!-- التاريخ هنعمله بجافا اسكربت --></p>
@@ -20,14 +24,14 @@
             <i class="fa-solid fa-moon"></i> 
             <a href="notifications.html" target="_blank" ><i class="fa-regular fa-bell"></i> </a>
             <a href="setting.html" target="_blank"><i class="fa-solid fa-gear"></i></a> 
-          <div class="user-avatar" id="avatar"></div> 
+          <div class="user-avatar" id="avatar">s</div> 
          </div>
     </header> 
     <main>
         <!-- SEARCH BAR -->
         <div class="search-bar">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" placeholder="Search..."  id="search">
+            <input type="search" placeholder="Search..."  id="search" data-i18n-placeholder="search">
         </div>
         <section>
             <div class="tasks-n">
@@ -36,7 +40,7 @@
                     <i class="fa-solid fa-sun"></i>
                     <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
                     <h3 id="totalTasks">0</h3>
-                    <p>Today's Tasks</p> 
+                    <p data-i18n="todayTasks">Today's Tasks</p> 
                     <input type="range" id="todayRange" min="0" max="100" value="0">
                     <p id="finesh">0%</p> 
                 </div>
@@ -45,7 +49,7 @@
                     <i class="fa-regular fa-circle-check"></i>
                     <i class="fa-solid fa-arrow-up-right-from-square arrow"></i> 
                     <h3 id="completedTasks">0</h3>  
-                    <p>Completed</p>
+                    <p data-i18n="completed">Completed</p>
                     <input type="range" id="completedRange" min="0" max="100" value="0">
                     <p id="comp">0%</p>  
                 </div>
@@ -54,8 +58,8 @@
                     <i class="fa-solid fa-list-check"></i>
                     <i class="fa-solid fa-arrow-up-right-from-square arrow"></i>
                     <h3 id="allTasks">0</h3>  
-                    <p>All Tasks</p> 
-                    <input type="range" max="100" id="all" value="0">
+                    <p data-i18n="allTasks">All Tasks</p> 
+                    <input type="range" min="0" max="100" id="all" value="0">
                     <p id="all-taskat">0%</p>  
                 </div>
                 <!-- CARD 4 -->
@@ -63,7 +67,7 @@
                    <i class="fa-solid fa-triangle-exclamation"></i>
                     <i class="fa-solid fa-arrow-up-right-from-square arrow"></i> 
                      <h3 id="overdueTasks">0</h3> <!-- عدد التاسكات اللي فات معدها -->
-                    <p>Overdue</p><!--// نوعه -->
+                    <p data-i18n="overdue">Overdue</p><!--// نوعه -->
                     <input type="range" id="overdueRange">
                     <p id="overduePercent">0%</p>  
                 </div>
@@ -71,18 +75,14 @@
         </section>
         <section>
             <div class="tasks">
-                 <h2>Your Tasks</h2>
-                 <button><a href="new-task.html" target="_blank"> <i class="fa-solid fa-plus"></i> Add New Task </a></button>
+                 <h2 data-i18n="yourTasks">Your Tasks</h2>
+                 <button data-i18n="addTask"><a href="new-task.html" target="_blank"> <i class="fa-solid fa-plus"></i> Add New Task </a></button>
             </div>
             <div class="filters" >
-                <!-- <button class="filter-btn">Tomorrow</button>
-                <button class="filter-btn">This week</button>
-                <button class="filter-btn" id="pending">Pending</button> -->
-
-                 <button class="filter-btn active" id="allBtn">All</button>
-                  <button class="filter-btn" id="todayBtn">Today</button>
-                 <button class="filter-btn" id="completedBtn">Completed</button>
-                 <button class="filter-btn" id="overdueBtn">Overdue</button>
+                <button data-i18n="all" class="filter-btn active" id="allBtn">All</button>
+                <button data-i18n="today" class="filter-btn" id="todayBtn">Today</button>
+                <button data-i18n="completed" class="filter-btn" id="completedBtn">Completed</button>
+                <button data-i18n="overdue" class="filter-btn" id="overdueBtn">Overdue</button>
             </div> 
            <div class="tasks-list"></div>
         </section>
@@ -90,6 +90,3 @@
 </body>
 <script src="js/main.js"></script>
 </html>
-
-
-

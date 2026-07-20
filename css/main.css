@@ -1,18 +1,3 @@
-:root{
-    --bg: #fff8fc;
-    --surface: #ffffff;
-    --text: #5b4b5f;
-    --text-light: #9b8fa3;
-    --border: #f2dce7;
-    --shadow: 0 10px 25px rgba(233, 151, 184, 0.15);
-    --pink: #ffd6e7;
-    --purple: #e7d7ff;
-    --blue: #d8eeff;
-    --mint: #d8f7e8;
-    --btn: #f48fb1;
-    --btn-hover: #ec6d98;
-}
-
 *{
     padding:0;
     margin:0;
@@ -204,7 +189,7 @@ main{
     padding:12px 22px;
     border:none;
     border-radius:14px;
-    background:var(--btn);
+    background:rgb(212, 57, 109);
     color:#fff;
     cursor:pointer;
     font-size:15px;

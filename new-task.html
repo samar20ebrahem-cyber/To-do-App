@@ -2,38 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/task.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/i18next@25.3.2/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@3.0.2/i18nextHttpBackend.min.js"></script>
+    <script src="js/language.js"></script>
+    <link rel="stylesheet" href="css/task.css">
+    <link rel="stylesheet" href="css/theme.css">
     <title>To Do List App New Task</title>
 </head>
-<body>
+<body class="dark">
    <header>
-        <h1>Create a new task</h1>
+        <h1 data-i18n="createTask">Create a new task</h1>
         <span class="close">✕</span>
     </header>
 
     <main>
         <form action="#" method="get">
-            <label for="title">Task Title</label>
-            <input type="text" id="title" placeholder="What's on your mind?" required>
+            <label for="title" data-i18n="taskTitle">Task Title</label>
+            <input type="text" id="title" placeholder="What's on your mind?" required  data-i18n-placeholder="taskTitlePlaceholder">
 
-            <label for="desc">Description</label>
-            <input type="text" id="desc" placeholder="Add details..." required>
+            <label for="desc" data-i18n="description">Description</label>
+            <input type="text" id="desc" placeholder="Add details..." required    data-i18n-placeholder="descriptionPlaceholder">
 
-            <label for="date">Date</label>
+            <label for="date" data-i18n="date">Date</label>
             <input type="date" id="date" required>
 
-            <label for="time">Time</label>
+            <label for="time" data-i18n="time">Time</label>
             <input type="time" id="time" required>
 
-            <label>Priority</label>
+            <label data-i18n="priority">Priority</label>
             <div class="priority-group">
-                <button type="button" class="priority-btn low" data-priority="low">Low</button>
-                <button type="button" class="priority-btn medium active" data-priority="medium">Medium</button>
-                <button type="button" class="priority-btn high" data-priority="high">High</button>
+                <button type="button" class="priority-btn low" data-priority="low" data-i18n="low">Low</button>
+                <button type="button" class="priority-btn medium active" data-priority="medium" data-i18n="medium">Medium</button>
+                <button type="button" class="priority-btn high" data-priority="high" data-i18n="high">High</button>
             </div>
 
-            <label>Task Color</label>
+            <label data-i18n="taskColor">Task Color</label>
             <div class="color-picker">
                 <div class="color-option" style="background: #e57373;" data-color="#e57373"></div>
                 <div class="color-option active" style="background: #c48b9f;" data-color="#c48b9f"></div>
@@ -43,25 +47,25 @@
                 <div class="color-option" style="background: #ffd54f;" data-color="#ffd54f"></div>
             </div>
 
-            <label for="category">Category</label>
+           <label for="category" data-i18n="category">Category</label>
             <select id="category" required>
-                <option value="study">📚 Study</option>
-                <option value="university">🏫 University</option>
-                <option value="programming">💻 Programming</option>
-                <option value="shopping">🛒 Shopping</option>
-                <option value="personal">👤 Personal</option>
-                <option value="work">💼 Work</option>
+               <option value="study" data-i18n="study">📚 Study</option>
+                <option value="university" data-i18n="university">🏫 University</option>
+                <option value="programming" data-i18n="programming">💻 Programming</option>
+                <option value="shopping" data-i18n="shopping">🛒 Shopping</option>
+                <option value="personal" data-i18n="personal">👤 Personal</option>
+                <option value="work" data-i18n="work">💼 Work</option>
             </select>
 
-            <label for="notes">Notes</label>
-            <input type="text" id="notes" placeholder="Anything to remember?">
+            <label for="notes" data-i18n="notes">Notes</label>
+            <input type="text" id="notes" placeholder="Anything to remember?" data-i18n-placeholder="notesPlaceholder">
 
-            <label for="attach">Attachment</label>
-            <input type="text" id="attach" placeholder="🔗 Attach a file (optional)">
+            <label for="attach" data-i18n="attachment">Attachment</label>
+            <input type="text" id="attach" placeholder="🔗 Attach a file (optional)"  data-i18n-placeholder="attachmentPlaceholder">
 
             <div class="form-actions">
-                <button type="button" class="btn-cancel">Cancel</button>
-                <button type="submit" class="btn-create">Create Task</button>
+                <button type="button" class="btn-cancel" data-i18n="cancel">Cancel</button>
+                <button type="submit" class="btn-create" data-i18n="createTaskButton">Create Task</button>
             </div>
         </form>
     </main>

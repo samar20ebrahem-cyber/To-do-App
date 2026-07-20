@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://unpkg.com/i18next@25.3.2/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@3.0.2/i18nextHttpBackend.min.js"></script>
+    <script src="js/language.js"></script>
     <link rel="stylesheet" href="css/notifications.css">
+     <link rel="stylesheet" href="css/theme.css">
     <title>To Do List App Notifications</title>
 </head>
-<body>
+<body class="dark">
     <header>
         <div class="text-title">
-            <p>Friday 10 May</p>
-            <h1>Good morning, Samar 👋</h1>
+            <p id="today-date">Friday 10 May</p>
+            <h1 id="welcome">Good morning, Samar 👋</h1>
         </div>
         <div class="icons-header">
             <i class="fa-solid fa-moon"></i> 
@@ -24,7 +28,7 @@
         <!-- SEARCH BAR -->
         <div class="search-bar">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" placeholder="Search tasks or reminders...">
+            <input type="search" placeholder="Search tasks or reminders..."  data-i18n-placeholder="searchNotifications">
         </div>
             <!-- NOTIFICATIONS CARDS -->
         <div class="notifications-cards">
@@ -32,21 +36,21 @@
                 <div class="noti">
                     <i class="fa-regular fa-bell"></i>
                     <div class="text">
-                        <h2>Notifications</h2>
-                        <p>Overdue and upcoming reminders</p>
+                        <h2 data-i18n="notifications">Notifications</h2>
+                        <p data-i18n="notificationsDesc">Overdue and upcoming reminders</p>
                     </div>
                 </div>
                <button onclick="location.href='new-task.html'">
                       <i class="fa-solid fa-plus"></i>
-                          New Task
+                     <span data-i18n="newTask">New Task</span>
                 </button>
             </div>
             <div class="card">
                 <div class="noti">
                     <i class="fa-regular fa-bell"></i>
                     <div class="text">
-                        <h2>Notifications</h2>
-                        <p>Overdue and upcoming task reminders</p>
+                        <h2 data-i18n="notifications">Notifications</h2>
+                        <p data-i18n="notificationsTaskDesc">Overdue and upcoming task reminders</p>
                     </div>
                 </div>
             </div>

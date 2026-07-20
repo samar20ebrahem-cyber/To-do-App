@@ -96,8 +96,6 @@ function displayTasks(array) {
     doneBtns.forEach(button => {
         button.addEventListener("click", function () {
             let id = Number(this.dataset.id)
-               console.log(tasks)
-                console.log(id)
             let task = tasks.find(task => task.id === id)
             task.completed = !task.completed
             localStorage.setItem("tasks", JSON.stringify(tasks))

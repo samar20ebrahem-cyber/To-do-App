@@ -1,21 +1,3 @@
-:root{
-    --bg: #fff8fc;
-    --surface: #ffffff;
-    --surface-2: #fff1f7;
-    --text: #5b4b5f;
-    --text-light: #9b8fa3;
-    --border: #f4dce6;
-    --shadow: 0 10px 25px rgba(233,151,184,.15);
-
-    --btn: #f48fb1;
-    --btn-hover: #ec6d98;
-
-    --pink: #ffdbe9;
-    --purple: #e7d7ff;
-    --blue: #dcefff;
-    --mint: #d9f7e7;
-}
-
 *{
     padding:0;
     margin:0;
@@ -154,9 +136,9 @@ input[type="checkbox"]{
 .option.active,
 .card:hover,
 .card.active{
-    background:var(--btn);
+    background:rgb(229, 62, 118);
     color:#fff;
-    border-color:var(--btn);
+    border-color:rgb(229, 62, 118);
 }
 
 .animation input[type="range"]{
@@ -169,7 +151,7 @@ button{
     padding:16px;
     border:none;
     border-radius:16px;
-    background:var(--btn);
+    background:rgb(243, 103, 149);
     color:#fff;
     font-size:17px;
     font-weight:600;
@@ -179,7 +161,7 @@ button{
 }
 
 button:hover{
-    background:var(--btn-hover);
+    background:rgb(255, 152, 169);
 }
 
 @media(max-width:600px){
