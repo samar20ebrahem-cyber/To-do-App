@@ -4,31 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <script src="https://unpkg.com/i18next@25.3.2/i18next.min.js"></script>
-    <script src="https://unpkg.com/i18next-http-backend@3.0.2/i18nextHttpBackend.min.js"></script>
-    <script src="js/language.js"></script>
     <link rel="stylesheet" href="css/notifications.css">
-     <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/theme.css">
     <title>To Do List App Notifications</title>
 </head>
 <body class="dark">
     <header>
         <div class="text-title">
-            <p id="today-date">Friday 10 May</p>
-            <h1 id="welcome">Good morning, Samar 👋</h1>
+            <p id="today-date"></p>
+            <h1 id="welcome"></h1>
         </div>
         <div class="icons-header">
             <i class="fa-solid fa-moon"></i> 
             <a href="notifications.html" target="_blank"><i class="fa-regular fa-bell"></i> </a>
             <a href="setting.html" target="_blank"><i class="fa-solid fa-gear"></i></a> 
-          <div class="user-avatar">S</div> 
+          <div class="user-avatar" id="avatar">S</div> 
          </div>
     </header>
     <main>
-        <!-- SEARCH BAR -->
+              <!-- SEARCH BAR -->
         <div class="search-bar">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" placeholder="Search tasks or reminders..."  data-i18n-placeholder="searchNotifications">
+            <input type="search" placeholder="Search..."  id="search" data-i18n-placeholder="search">
         </div>
             <!-- NOTIFICATIONS CARDS -->
         <div class="notifications-cards">
@@ -55,7 +52,13 @@
                 </div>
             </div>
         </div>
-        <!-- باقي الكود بجافا اسكربت -->
+      <section class="notifications-list">
+
+     </section>
     </main>
 </body>
+  <script src="https://unpkg.com/i18next@25.3.2/i18next.min.js"></script>
+  <script src="https://unpkg.com/i18next-http-backend@3.0.2/i18nextHttpBackend.min.js"></script>
+  <script src="js/language.js"></script>
+  <script src="js/notifications.js"></script>
 </html>

@@ -17,7 +17,7 @@ if(hour>=5 && hour<12){
 }else if(hour>=12 && hour<17){ 
      greeting ='Good Afternoon';
 }else if(hour>=17 && hour<20){
-     greeting ='Good Evening';
+     greeting ='Good Evening'; 
 }else{
     greeting ='Good Night';
 }
@@ -37,10 +37,12 @@ if (savedTasks) {
     tasks = JSON.parse(savedTasks)
 }
 
-// AVATAR 
-if(userName){
-    avatar.textContent = userName.charAt(0).toUpperCase()
-}
+// // AVATAR 
+// if(userName){
+//     avatar.textContent = userName.charAt(0).toUpperCase()
+// }
+
+
 
 // ===================== FILTERS =====================
 
@@ -48,6 +50,21 @@ const allBtn = document.getElementById("allBtn")
 const todayBtn = document.getElementById("todayBtn")
 const completedBtn = document.getElementById("completedBtn")
 const overdueBtn = document.getElementById("overdueBtn")
+
+let todayDate = today.toISOString().split("T")[0];
+
+let todayTasks = tasks.filter(task => {
+    return task.date === todayDate
+})
+// Completed Tasks
+let completedTasks = tasks.filter(task => {
+    return task.completed
+})
+// Overdue Tasks
+let overdueTasksList = tasks.filter(task => {
+    return task.date < todayDate && !task.completed
+})
+
 
 function displayTasks(array) {
     tasksList.innerHTML = ""
@@ -100,9 +117,9 @@ function displayTasks(array) {
             task.completed = !task.completed
             localStorage.setItem("tasks", JSON.stringify(tasks))
             location.reload()
-        })
-    })
-
+        });
+              });
+  //DELETE
     const deleteBtns = document.querySelectorAll(".delete-btn")
 
     deleteBtns.forEach(button => {
@@ -114,23 +131,6 @@ function displayTasks(array) {
         });
     });
 }
-
-let todayDate = today.toISOString().split("T")[0]
-
-// Today's Tasks
-let todayTasks = tasks.filter(task => {
-    return task.date === todayDate
-})
-
-// Completed Tasks
-let completedTasks = tasks.filter(task => {
-    return task.completed
-})
-
-// Overdue Tasks
-let overdueTasksList = tasks.filter(task => {
-    return task.date < todayDate && !task.completed;
-})
 
 // الكاردات
 
@@ -208,9 +208,19 @@ overdueBtn.addEventListener("click", function () {
     setActive(this);
     displayTasks(overdueTasksList);
 });
-displayTasks(tasks);
-
-
+const notificationCount = document.getElementById("notificationCount")
+const pendingTodayTasks = tasks.filter(task => {
+    return task.date === todayDate && !task.completed
+})
+const notificationsNumber =
+    overdueTasksList.length + pendingTodayTasks.length
+    notificationCount.textContent = notificationsNumber
+    notificationCount.textContent = notificationsNumber;
+    if (notificationsNumber === 0) {
+    notificationCount.style.display = "none"
+   } else {
+    notificationCount.style.display = "flex"
+}
 
 // BG-COLORS
 const filterBtns = document.querySelectorAll(".filter-btn");
@@ -230,3 +240,4 @@ search.addEventListener('input', function(){
     })
     displayTasks(searchTasks)
 })
+displayTasks(tasks)
