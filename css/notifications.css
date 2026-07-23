@@ -330,12 +330,10 @@ header{
 }
 
 .task-card
-/* .card-vs,
-.card, */
-/* .notifications-card */ { 
+{  
     background: var(--surface);
     border: 1px solid var(--border);
-    color: rgba(61, 20, 20, 0.144);
+    color: #000000;
 }
 h1,h2,h3{
     color: white;
