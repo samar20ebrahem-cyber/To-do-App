@@ -12,7 +12,6 @@
         <h1 data-i18n="createTask">Create a new task</h1>
         <span class="close">✕</span>
     </header>
-
     <main>
         <form action="#" method="get">
             <label for="title" data-i18n="taskTitle">Task Title</label>
@@ -57,8 +56,10 @@
             <label for="notes" data-i18n="notes">Notes</label>
             <input type="text" id="notes" placeholder="Anything to remember?" data-i18n-placeholder="notesPlaceholder">
 
-            <label for="attach" data-i18n="attachment">Attachment</label>
-            <input type="text" id="attach" placeholder="🔗 Attach a file (optional)"  data-i18n-placeholder="attachmentPlaceholder">
+          <label for="attach" data-i18n="attachment" data-i18n-placeholder="attachmentPlaceholder">
+    📎 Attach a file (optional)
+</label>
+<input type="file" id="attach" > 
 
             <div class="form-actions">
                 <button type="button" class="btn-cancel" data-i18n="cancel">Cancel</button>
