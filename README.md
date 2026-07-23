@@ -60,19 +60,6 @@ ToDo-App/
 │── css/
 │── js/
 │── locales/
-│── pages/
-│── images/
-│── index.html
-└── README.md
-```
-
-## 📂 Project Structure
-
-```
-ToDo-App/
-│── css/
-│── js/
-│── locales/
 │── index.html
 └── README.md
 ```
