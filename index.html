@@ -11,18 +11,18 @@
      <link rel="stylesheet" href="css/theme.css">
     <title>To Do List App</title>
 </head>
-<body class="dark">
+<body>
     <header>
         <div class="text-title">
              <p  id="today-date"><!-- التاريخ هنعمله بجافا اسكربت --></p>
             <h1 id="welcome"> </h1>
         </div>
          <div class="icons-header">
-            <i class="fa-solid fa-moon"></i> 
+            <i class="fa-solid fa-moon"  id="mode"></i> 
             <div class="notification-icon">
                <a href="notifications.html"> <i class="fa-regular fa-bell"></i></a> <span id="notificationCount" class="notification-count">0</span></div>
             <a href="setting.html" target="_blank"><i class="fa-solid fa-gear"></i></a> 
-          <div class="user-avatar" id="avatar">s</div> 
+          <div class="user-avatar" id="avatar"></div> 
          </div>
     </header> 
     <main>
@@ -74,9 +74,12 @@
         <section>
             <div class="tasks">
                  <h2 data-i18n="yourTasks">Your Tasks</h2>
-                 <button data-i18n="addTask"><a href="new-task.html" target="_blank"> <i class="fa-solid fa-plus"></i> Add New Task </a></button>
+                  <button onclick="location.href='new-task.html'">
+                      <i class="fa-solid fa-plus"></i>
+                     <span data-i18n="newTask">New Task</span>
+                </button>
             </div>
-            <div class="filters" >
+            <div class="filters">
                 <button data-i18n="all" class="filter-btn active" id="allBtn">All</button>
                 <button data-i18n="today" class="filter-btn" id="todayBtn">Today</button>
                 <button data-i18n="completed" class="filter-btn" id="completedBtn">Completed</button>

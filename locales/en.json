@@ -51,5 +51,7 @@
   "attachment": "Attachment",
   "attachmentPlaceholder": "🔗 Attach a file (optional)",
   "cancel": "Cancel",
-  "createTaskButton": "Create Task"
+  "createTaskButton": "Create Task",
+  "noTasks": "No tasks found",
+  "noTasksDescription": "There are no tasks to display"
 }

@@ -37,12 +37,10 @@ if (savedTasks) {
     tasks = JSON.parse(savedTasks)
 }
 
-// // AVATAR 
-// if(userName){
-//     avatar.textContent = userName.charAt(0).toUpperCase()
-// }
-
-
+// AVATAR 
+if(userName){
+    avatar.textContent = userName.charAt(0).toUpperCase()
+}
 
 // ===================== FILTERS =====================
 
@@ -54,7 +52,7 @@ const overdueBtn = document.getElementById("overdueBtn")
 let todayDate = today.toISOString().split("T")[0];
 
 let todayTasks = tasks.filter(task => {
-    return task.date === todayDate
+    task.date === todayDate && !task.completed
 })
 // Completed Tasks
 let completedTasks = tasks.filter(task => {
@@ -68,7 +66,15 @@ let overdueTasksList = tasks.filter(task => {
 
 function displayTasks(array) {
     tasksList.innerHTML = ""
-
+    if (array.length === 0) {
+        tasksList.innerHTML = `
+        <div class="empty-tasks">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <h3>${i18next.t("noTasks")}</h3>
+            <p>${i18next.t("noTasksDescription")}</p>
+        </div> `
+        return
+    }
     array.forEach((task) => {
     tasksList.innerHTML += `
     <div class="task-card" style="border-left:6px solid ${task.color};">
@@ -132,8 +138,19 @@ function displayTasks(array) {
     });
 }
 
-// الكاردات
+// DARK MODE
+const darkMode = document.getElementById("mode")
+const mode = document.getElementById("mode")
+mode.addEventListener("click", () => {
+    document.body.classList.toggle("dark")
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("theme","dark")
+    }else{
+        localStorage.setItem("theme","light")
+    }
+})
 
+// الكاردات
 // CARD 1
 const totalTasks = document.getElementById("totalTasks")
 const fineshed = document.getElementById("finesh")
@@ -192,6 +209,7 @@ overdueRange.value = overdueValue
 allBtn.addEventListener("click", function () {
     setActive(this);
     displayTasks(tasks);
+
 });
 
 todayBtn.addEventListener("click", function () {
@@ -215,7 +233,6 @@ const pendingTodayTasks = tasks.filter(task => {
 const notificationsNumber =
     overdueTasksList.length + pendingTodayTasks.length
     notificationCount.textContent = notificationsNumber
-    notificationCount.textContent = notificationsNumber;
     if (notificationsNumber === 0) {
     notificationCount.style.display = "none"
    } else {
@@ -235,7 +252,11 @@ const search = document.getElementById("search");
 search.addEventListener('input', function(){
     let value = this.value.toLowerCase()
     let searchTasks = tasks.filter(task=>{
-        return task.title.toLowerCase().includes(value);
+       return (
+         task.title.toLowerCase().includes(value) ||
+         task.description.toLowerCase().includes(value) ||
+         task.category.toLowerCase().includes(value)
+    )
         
     })
     displayTasks(searchTasks)

@@ -190,7 +190,7 @@ main{
     border:none;
     border-radius:14px;
     background:rgb(212, 57, 109);
-    color:#fff;
+    color: #ffffff;
     cursor:pointer;
     font-size:15px;
     transition:.3s;
@@ -349,6 +349,48 @@ input[type="range"]{
     font-weight:bold;
 }
 
+.empty-tasks{
+  margin: 20px;
+}
+
+
+.task-card,
+.card-vs,
+.card,
+.notifications-card{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+h1,h2,h3{
+    color: var(--text);
+}
+
+p,
+span,
+label{
+    color: var(--text-light);
+}
+input,
+select,
+textarea{
+    background: var(--surface-2);
+    color: var(--text);
+    border:1px solid var(--border);
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#9f92b8;
+}
+button{
+    background:var(--primary);
+    color:#fff;
+}
+
+button:hover{
+    background:var(--primary-hover);
+}
 @media(max-width:768px){
 
     .tasks{

@@ -49,5 +49,7 @@
   "attachment": "مرفق",
   "attachmentPlaceholder": "🔗 أرفق ملفًا (اختياري)",
   "cancel": "إلغاء",
-  "createTaskButton": "إنشاء المهمة"
+  "createTaskButton": "إنشاء المهمة",
+  "noTasks": "لا توجد مهام",
+  "noTasksDescription": "لا توجد مهام لعرضها"
 }
